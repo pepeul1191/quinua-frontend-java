@@ -17,3 +17,8 @@ libraryDependencies += "org.awaitility" % "awaitility" % "2.0.0" % Test
 
 // Make verbose tests
 testOptions in Test := Seq(Tests.Argument(TestFrameworks.JUnit, "-a", "-v"))
+
+libraryDependencies += "com.sparkjava" % "spark-template-velocity" % "2.5.5"
+libraryDependencies += "org.postgresql" % "postgresql" % "9.4-1200-jdbc41"
+libraryDependencies += "com.j256.ormlite" % "ormlite-jdbc" % "3.4"
+libraryDependencies += "org.xerial" % "sqlite-jdbc" % "3.20.0" % "test"

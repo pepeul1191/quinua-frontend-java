@@ -7,6 +7,3 @@ addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.6.3")
 // basis using disablePlugins(PlayEnhancer) in your build.sbt
 addSbtPlugin("com.typesafe.sbt" % "sbt-play-enhancer" % "1.1.0")
 addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "5.1.0")
-libraryDependencies += "org.postgresql" % "postgresql" % "9.4-1200-jdbc41"
-libraryDependencies += "com.j256.ormlite" % "ormlite-jdbc" % "3.4"
-libraryDependencies += "org.xerial" % "sqlite-jdbc" % "3.20.0" % "test"

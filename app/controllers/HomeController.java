@@ -1,23 +1,26 @@
 package controllers;
 
-import play.mvc.*;
+import java.util.HashMap;
+import java.util.Map;
 
+
+import configs.TemplateView;
+import play.mvc.*;
+import spark.ModelAndView;
 import views.html.*;
 
-/**
- * This controller contains an action to handle HTTP requests
- * to the application's home page.
- */
 public class HomeController extends Controller {
 
-    /**
-     * An action that renders an HTML page with a welcome message.
-     * The configuration in the <code>routes</code> file means that
-     * this method will be called when the application receives a
-     * <code>GET</code> request with a path of <code>/</code>.
-     */
     public Result index() {
-        return ok(index.render("Your new application is ready."));
+    	//return ok("Hola mundo").as("text/html; charset=iso-8859-1");
+    	Map<String, Object> model = new HashMap<>();
+    	ModelAndView modelAndView = new ModelAndView(model, "views/index");
+    	model.put("title", "Mantenimiento - Accesós");
+    	//System.out.println();    	
+    	
+    	return ok(TemplateView.render("index.vm", model)).as("text/html; charset=iso-8859-1");
+    	
+    	//return ok(views.html.index.render());
     }
 
 }
