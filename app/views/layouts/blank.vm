@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="$css">
     <script type="text/javascript">var BASE_URL = '$constantes.get("BASE_URL")';</script>
-    <link rel="shortcut icon" href="$constantes.get("STATIC_URL")favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://www.ulima.edu.pe/sites/default/files/favicon_1_1.ico" type="image/x-icon">
 </head>
 <body>
 	<!-- Inicio Modal -->
