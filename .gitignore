@@ -6,6 +6,7 @@ target
 /.project
 /.settings
 /
+Gemfile.lock
 node_modules
 public/dist
 public/bower_components

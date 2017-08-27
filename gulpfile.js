@@ -7,9 +7,9 @@ var replace = require('gulp-replace');
 var plumber = require('gulp-plumber');
 var watch = require('gulp-watch');
 var livereload = require('gulp-livereload');
-var BASE_URL = 'http://localhost:2000/';
-var DESTINO = 'src/main/resources/public/dist/';
-var MEDIA = 'src/main/resources/public/'
+var BASE_URL = 'http://localhost:8080/';
+var DESTINO = 'public/dist/';
+var MEDIA = 'public/'
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

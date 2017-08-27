@@ -2,6 +2,7 @@ package configs;
 
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
 
@@ -29,9 +30,14 @@ public class TemplateView {
         Template t = ve.getTemplate(template, "utf-8");
     	
         VelocityContext context = new VelocityContext();
-        context.put("saludo", "?????");
-        
-        
+        Iterator it = model.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            context.put((String) pair.getKey(), pair.getValue());
+            it.remove(); // avoids a ConcurrentModificationException
+        }
+        context.put("constantes", Constantes.getMapita());
+       
         StringWriter w = new StringWriter();
         t.merge(context, w);    		
     	

@@ -18,9 +18,7 @@ public class HomeController extends Controller {
     	model.put("title", "Mantenimiento - Accesós");
     	//System.out.println();    	
     	
-    	return ok(TemplateView.render("index.vm", model)).as("text/html; charset=iso-8859-1");
-    	
-    	//return ok(views.html.index.render());
+    	return ok(TemplateView.render("index.vm", model)).as("text/html; charset=utf-8");
     }
 
 }

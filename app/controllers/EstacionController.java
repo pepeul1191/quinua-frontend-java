@@ -16,7 +16,7 @@ import models.Estacion;
 public class EstacionController extends Controller {
 
     public Result listar() {
-    	String rpta = "";
+    		String rpta = "";
 
         try {
             Conexion conexion = new Conexion();
@@ -50,7 +50,7 @@ public class EstacionController extends Controller {
             return ok(rpta).as("text/html; charset=utf-8");
         }
     	
-    	return ok(rpta).as("text/html; charset=utf-8");
+    		return ok(rpta).as("text/html; charset=utf-8");
     }
 
 
