@@ -42,13 +42,13 @@ gulp.task('fonts', function() {
   		MEDIA + 'bower_components/font-awesome/fonts/*', 
   		MEDIA + 'bower_components/bootstrap/fonts/*'])
     .pipe(plumber())
-    .pipe(gulp.dest(DESTINO + 'assets'));
+    .pipe(gulp.dest(DESTINO + ''));
 });
 
 gulp.task('layout-css', function() {
 	gulp.src([
   		MEDIA + 'favicon.ico'])
-    .pipe(gulp.dest(DESTINO + "assets"));
+    .pipe(gulp.dest(DESTINO + ""));
 	
       gulp.src([
     	  	MEDIA + 'bower_components/bootstrap/dist/css/bootstrap.min.css', 
@@ -56,8 +56,8 @@ gulp.task('layout-css', function() {
       .pipe(plumber())
       .pipe(concatCss('vendor.min.css'))
       .pipe(minifyCss())
-      .pipe(replace('../../../font-awesome/fonts/', BASE_URL + 'dist/assets/'))
-      .pipe(gulp.dest(DESTINO + 'assets'));
+      .pipe(replace('../../../font-awesome/fonts/', BASE_URL + 'dist//'))
+      .pipe(gulp.dest(DESTINO + ''));
 });
 
 gulp.task('swp-plugins', function(){
@@ -75,7 +75,7 @@ gulp.task('swp-plugins', function(){
     		])
      .pipe(plumber())
      .pipe(concatJs('swp.js'))
-     .pipe(gulp.dest(DESTINO + 'assets'));
+     .pipe(gulp.dest(DESTINO + ''));
 
      gulp.src([
     	 	MEDIA + 'bower_components/swp-plugins/assets/css/mootools.autocomplete.css', 
@@ -83,7 +83,7 @@ gulp.task('swp-plugins', function(){
     	 	MEDIA + 'bower_components/swp-plugins/assets/css/mootools.validations.css'])
      .pipe(plumber())
      .pipe(concatCss('swp.css'))
-     .pipe(gulp.dest(DESTINO + 'assets'));
+     .pipe(gulp.dest(DESTINO + ''));
 });
 
 gulp.task('layout-js', function() {
@@ -96,17 +96,17 @@ gulp.task('layout-js', function() {
     		MEDIA + 'bower_components/backbone.marionette/lib/backbone.marionette.min.js'])
     .pipe(plumber())
     .pipe(concatJs('vendor.min.js'))
-    .pipe(gulp.dest(DESTINO + 'assets'));
+    .pipe(gulp.dest(DESTINO + ''));
 });
 
 gulp.task('layout', ['fonts', 'layout-css', 'layout-js']);
 
 gulp.task('styles', function() {
-      gulp.src([DESTINO + 'assets/vendor.min.css', MEDIA + 'assets/site/css/styles.css'])
+      gulp.src([DESTINO + 'vendor.min.css', MEDIA + 'assets/site/css/styles.css'])
       .pipe(plumber())
       .pipe(concatCss('styles.min.css'))
       //.pipe(minifyCss())
-      .pipe(gulp.dest(DESTINO + 'assets'));
+      .pipe(gulp.dest(DESTINO + ''));
 });
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------
@@ -114,11 +114,11 @@ gulp.task('styles', function() {
 gulp.task('login', function(){
 	gulp.start('layout', 'styles');
 	
-	 gulp.src([DESTINO + 'assets/styles.min.css', MEDIA + 'assets/login/index.css'])
+	 gulp.src([DESTINO + 'styles.min.css', MEDIA + 'assets/login/index.css'])
      .pipe(plumber())
      .pipe(concatCss('login.min.css'))
     // .pipe(minifyCss())
-     .pipe(gulp.dest(DESTINO + 'assets'));
+     .pipe(gulp.dest(DESTINO + ''));
 });
 
 gulp.task('mantenimiento', function(){
@@ -141,12 +141,12 @@ gulp.task('mantenimiento', function(){
 //.pipe(uglify())
   .pipe(plumber())
   .pipe(concatJs('mantenimiento.min.js'))
-  .pipe(gulp.dest(DESTINO + 'assets'))
+  .pipe(gulp.dest(DESTINO + ''))
   .pipe(livereload());
   
-  gulp.src([DESTINO + 'assets/styles.min.css', DESTINO + 'assets/swp.css'])
+  gulp.src([DESTINO + 'styles.min.css', DESTINO + 'swp.css'])
   .pipe(plumber())
   .pipe(concatCss('mantenimiento.min.css'))
-  .pipe(gulp.dest(DESTINO + 'assets'));
+  .pipe(gulp.dest(DESTINO + ''));
 });
 
