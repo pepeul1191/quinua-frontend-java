@@ -22,7 +22,7 @@ public class TemplateView {
         Properties properties = new Properties();
         properties.setProperty("resource.loader", "file");
         properties.setProperty("file.resource.loader.class", "org.apache.velocity.runtime.resource.loader.FileResourceLoader");
-        properties.setProperty("file.resource.loader.path", "app/views");
+        properties.setProperty("file.resource.loader.path", "templates");
         properties.setProperty("file.resource.loader.cache", "true");
         properties.setProperty("file.resource.loader.modificationCheckInterval", "2");
         ve.init(properties);
