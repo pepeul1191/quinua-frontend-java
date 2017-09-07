@@ -20,7 +20,7 @@ public class BeforeSetHeadersFilter extends EssentialFilter {
 	@Override
 	public EssentialAction apply(EssentialAction next) {
 		return EssentialAction.of(request ->
-        	next.apply(request).map(result -> result.withHeader("Server", "Jetty"), exec)
+        	next.apply(request).map(result -> result.withHeader("Server", "Jetty-Ubuntu"), exec)
 		);
 	}
 
