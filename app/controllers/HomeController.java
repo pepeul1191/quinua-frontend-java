@@ -6,6 +6,7 @@ import java.util.Map;
 import actions.AclAction;
 import actions.LogeadoAction;
 import actions.LoginAuthenticator;
+import configs.PermisoAnnotation;
 import configs.TemplateView;
 import play.mvc.*;
 import spark.ModelAndView;
@@ -13,6 +14,7 @@ import spark.ModelAndView;
 public class HomeController extends Controller {
 
 	@With( { LogeadoAction.class, AclAction.class } )
+	@PermisoAnnotation(false)
 	@Security.Authenticated(LoginAuthenticator.class)
     public Result index() {
     	//return ok("Hola mundo").as("text/html; charset=iso-8859-1");
